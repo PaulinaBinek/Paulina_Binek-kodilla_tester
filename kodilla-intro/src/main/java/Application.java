@@ -52,16 +52,12 @@ public class Application {
     public static void main(String[] args) {
         Application adam = new Application("Adam", 40.5, 178);
 
-        if (adam.validAge()) {
-            System.out.println("The User is older than 30.");
-        }
-
-        if (adam.validHeight()) {
-            System.out.println("The User is higher than 160 cm.");
-        }
         if (adam.validName()) {
-            System.out.println("The user name is " + adam.name);
+            if (adam.validAge() && adam.validHeight()) {
+                System.out.println("User is older than 30 and higher than 160cm");
+            } else {
+                System.out.println("User is 30 (or younger) or 160cm (or shorter)");
+            }
         }
+    }}
 
-    }
-}
