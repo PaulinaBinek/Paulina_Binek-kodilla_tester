@@ -1,3 +1,4 @@
+
 public class Application {
     String name;
     double age;
@@ -65,6 +66,4 @@ public class Application {
         adam.validName();
     }
 }
-
-
 
