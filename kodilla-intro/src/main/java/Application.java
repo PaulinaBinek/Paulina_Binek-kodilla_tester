@@ -1,4 +1,3 @@
-
 public class Application {
     String name;
     double age;
@@ -12,39 +11,32 @@ public class Application {
     }
 
     public boolean validAge() {
-        this.age = age;
         boolean checkAge;
 
         if (age > 30) {
             checkAge = true;
-            System.out.println("The User is older than 30 or higher than 160.");
         }
         else {
             checkAge = false;
-            System.out.println("The User is 30 (or younger) or 160 cm (or shorter)");
         }
         return checkAge;
 
     }
 
     public boolean validHeight() {
-        this.height = height;
         boolean checkHeight;
 
         if (height > 160) {
             checkHeight = true;
-            System.out.println("The User is older than 30 or higher than 160.");
         }
         else {
             checkHeight = false;
-            System.out.println("The User is 30 (or younger) or 160 cm (or shorter)");
         }
         return checkHeight;
 
     }
 
     public boolean validName() {
-        this.name = name;
         boolean checkName;
 
         if (name != null) {
@@ -52,18 +44,21 @@ public class Application {
         }
         else {
             checkName = false;
-            System.out.println("Provide User name!");
         }
         return checkName;
 
     }
 
-
     public static void main(String[] args) {
         Application adam = new Application("Adam", 40.5, 178);
-        adam.validAge();
-        adam.validHeight();
-        adam.validName();
+
+        if (adam.validAge() && adam.validName()) {
+            System.out.println("The User is older than 30.");
+        }
+
+        if (adam.validHeight() && adam.validName()) {
+            System.out.println("The User is higher than 160 cm.");
+        }
+
     }
 }
-
