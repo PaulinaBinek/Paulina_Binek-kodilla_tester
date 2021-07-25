@@ -3,43 +3,26 @@ import java.util.Random;
 public class RandomNumbers {
     public static void main(String[] args) {
         Random rand = new Random();
-        int[] randomElements = new int[10];
+        int sum = 0;
+        int numbers = 300;
+        int min = rand.nextInt(31);
+        int max = min;
+        sum = sum + max;
 
-        int sum=0;
-        for (int i=0; i < randomElements.length; i++)
-        {
-            randomElements[i] = rand.nextInt(31);
-            sum += randomElements[i];
+        for (int i = 0; i < numbers; i++) {
+            int random = rand.nextInt(31);
+            sum = sum + random;
+
+            if (max < random) max = random;
+            if(random < min) min = random;
 
             if (sum >= 5000) {
                 return;
             }
 
-        }
+            System.out.println("Random number is: " + random);
+            System.out.println("Max value is: " + max);
+            System.out.println("Min value is: " + min);
+            System.out.println("The Sum is: " + sum);
 
-        System.out.println("Sum = " + sum);
-        System.out.println("Minimum Value = " + getMinValue(randomElements));
-        System.out.println("Maximum Value = " + getMaxValue(randomElements));
-
-    }
-    public static int getMaxValue(int[] randomElements){
-        int maxValue = randomElements[0];
-        for(int i=1;i<randomElements.length;i++){
-            if(randomElements[i] > maxValue){
-                maxValue = randomElements[i];
-            }
-        }
-        return maxValue;
-    }
-
-    public static int getMinValue(int[] randomElements){
-        int minValue = randomElements[0];
-        for(int i=1;i<randomElements.length;i++){
-            if(randomElements[i] < minValue){
-                minValue = randomElements[i];
-            }
-        }
-        return minValue;
-    }
-
-}
+        }}}
