@@ -1,6 +1,6 @@
 package com.kodilla.abstracts.homework;
 
-public class Job {
+public abstract class Job {
     private int salary;
     private String responsibilities;
 

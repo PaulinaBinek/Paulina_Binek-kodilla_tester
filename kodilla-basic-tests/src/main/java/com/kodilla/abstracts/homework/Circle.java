@@ -1,20 +1,21 @@
 package com.kodilla.abstracts.homework;
 
 public class Circle extends Shape {
+    public double R;
+    static final double PI = 3.1415927;
 
-    public Circle(int parameterA, int parameterB, int parameterR) {
-        super(parameterA, parameterB, parameterR);
+
+    public Circle(double R) {
+        this.R = R;
     }
 
     @Override
     public double calcSurface() {
-        return PI * getParameterR() * getParameterR();
+        return PI * R * R;
     }
 
     @Override
     public double calcPerimeter() {
-        return  2 * PI * getParameterR();
+        return 2 * PI * R;
     }
 }
-
-

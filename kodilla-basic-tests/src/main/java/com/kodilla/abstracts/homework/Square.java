@@ -1,19 +1,19 @@
 package com.kodilla.abstracts.homework;
 
 public class Square extends Shape {
+    public double A;
 
-
-    public Square(int parameterA, int parameterB, int parameterR) {
-        super(parameterA, parameterB, parameterR);
+    public Square(double A) {
+        this.A = A;
     }
 
     @Override
     public double calcSurface() {
-        return getParameterA()* getParameterA();
+        return A * A;
     }
 
     @Override
     public double calcPerimeter() {
-        return 4 * getParameterA();
+        return 4 * A;
     }
 }
