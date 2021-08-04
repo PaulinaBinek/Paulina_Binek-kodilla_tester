@@ -28,4 +28,10 @@ public class Opel implements Car{
         speed = speed - deceleration;
 
     }
+
+    @Override
+    public int getIncreaseSpeed() {
+        return acceleration;
+    }
+
 }

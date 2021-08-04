@@ -5,7 +5,7 @@ public class InterfacesDemo {
         Square square = new Square(10.0);
         showShapeDetails(square);
 
-        Circle circle = new Circle(7.0);
+        Square circle = new Square(7.0);
         showShapeDetails(circle);
 
         Triangle triangle = new Triangle(6.0, 4.0, 7.211);
