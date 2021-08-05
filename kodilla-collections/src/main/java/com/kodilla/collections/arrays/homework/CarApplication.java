@@ -22,7 +22,8 @@ public class CarApplication {
         }
 
         public static void main(String[] args) {
-            Car[] cars = new Car[16];
+            Random random = new Random();
+            Car[] cars = new Car[random.nextInt(16) + 1];
             for (int n = 0; n < cars.length; n++)
                 cars[n] = drawCar();
             for (Car car : cars)
