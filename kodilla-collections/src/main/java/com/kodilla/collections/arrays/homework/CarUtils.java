@@ -5,6 +5,7 @@ import com.kodilla.collections.interfaces.homework.Mercedes;
 import com.kodilla.collections.interfaces.homework.Ford;
 import com.kodilla.collections.interfaces.homework.Opel;
 
+
 public class CarUtils {
 
 
@@ -25,6 +26,8 @@ public class CarUtils {
             else
                 return "Unknown car brand";
         }
+
+
     }
 
 

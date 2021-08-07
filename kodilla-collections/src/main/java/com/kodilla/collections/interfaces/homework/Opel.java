@@ -1,5 +1,7 @@
 package com.kodilla.collections.interfaces.homework;
 
+import java.util.Objects;
+
 public class Opel implements Car{
 
     private int acceleration;
@@ -33,5 +35,6 @@ public class Opel implements Car{
     public int getIncreaseSpeed() {
         return acceleration;
     }
+
 
 }

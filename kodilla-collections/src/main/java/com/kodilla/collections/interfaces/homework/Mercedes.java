@@ -1,5 +1,7 @@
 package com.kodilla.collections.interfaces.homework;
 
+import java.util.Objects;
+
 public class Mercedes implements Car{
     private int acceleration;
     private int deceleration;
@@ -32,5 +34,6 @@ public class Mercedes implements Car{
     public int getIncreaseSpeed() {
         return acceleration;
     }
+
 
 }
