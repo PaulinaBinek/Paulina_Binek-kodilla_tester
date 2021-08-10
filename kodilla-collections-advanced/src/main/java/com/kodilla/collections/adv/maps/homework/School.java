@@ -7,13 +7,11 @@ public class School {
     private String schoolName;
     private List<Integer> numberOfStudents = new ArrayList<>();
 
-    public School(String schoolName) {
+    public School(String schoolName, int... numberOfStudents) {
         this.schoolName = schoolName;
-    }
+        for (int school : numberOfStudents)
+            this.numberOfStudents.add(school);
 
-    public School(int... numberOfStudents) {
-        for (int students : numberOfStudents)
-            this.numberOfStudents.add(students);
     }
 
     public int sumOfStudents() {
@@ -22,6 +20,7 @@ public class School {
             sum = sum + students;
         return sum;
     }
+
 
 
     public String getSchoolName() {

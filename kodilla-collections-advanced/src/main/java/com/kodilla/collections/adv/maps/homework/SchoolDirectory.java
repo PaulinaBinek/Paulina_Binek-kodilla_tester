@@ -5,31 +5,27 @@ import java.util.Map;
 
 public class SchoolDirectory {
     public static void main(String[] args) {
-        Map<School, Principal> headMaster = new HashMap<>();
-        School assassinsSchool = new School("Assassins School");
-        School necromancySchool = new School("Necromancy School");
-        School witchcraftSchool = new School("Witchcraft School");
+        Map<Principal, School> headMaster = new HashMap<>();
 
         Principal altairIbnLaahad = new Principal("Altair Ibn-La'Ahad");
         Principal xardasMage = new Principal("Xardas");
         Principal trissMerigold = new Principal("Triss Merigold");
 
-        School assassinsStudents = new School(43, 3, 23);
-        School necromancyStudents = new School(23, 2,45);
-        School witchcrafStudents = new School( 24, 2, 13);
 
-       headMaster.put(assassinsSchool, altairIbnLaahad);
-       headMaster.put(necromancySchool, xardasMage);
-       headMaster.put(witchcraftSchool, trissMerigold);
-       headMaster.put(assassinsStudents, altairIbnLaahad);
-       headMaster.put(necromancyStudents, xardasMage);
-       headMaster.put(witchcrafStudents, trissMerigold);
+        School assassinsStudents = new School("Assasin's School", 23, 23, 53);
+        School necromancyStudents = new School("Necromancy School", 28, 45, 45);
+        School witchcrafStudents = new School( "Witchcraft School", 13, 34, 45);
+
+       headMaster.put(altairIbnLaahad, assassinsStudents);
+       headMaster.put(xardasMage, necromancyStudents);
+       headMaster.put(trissMerigold, witchcrafStudents);
 
 
 
-        for (Map.Entry<School, Principal> headMasterEntry : headMaster.entrySet())
-            System.out.println(headMasterEntry.getKey().getSchoolName()  + ", the principal is " +
-                    headMasterEntry.getValue().getPrincipalName() + ", number of students is " + headMasterEntry.getKey().sumOfStudents());
+
+        for (Map.Entry<Principal, School> headMasterEntry : headMaster.entrySet())
+            System.out.println("The principal is " + headMasterEntry.getKey().getPrincipalName()  + ", the school is " +
+                    headMasterEntry.getValue().getSchoolName() + ", number of students is " + headMasterEntry.getValue().sumOfStudents());
 
     }
 }
