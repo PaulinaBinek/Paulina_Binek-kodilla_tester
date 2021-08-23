@@ -1,18 +1,15 @@
 package com.kodilla.exception.homework;
 
-import java.util.List;
-
 public class WarehouseApp {
-    public static void main(String[] args) {
-        Warehouse.addOrder("123");
-        Warehouse.addOrder("456");
-        Warehouse.addOrder("789");
-        Warehouse.addOrder("101");
-        System.out.println(Warehouse.getOrdersList().size());
+    public static void main(String[] args) throws OrderDoesntExistException {
+        Warehouse warehouse = new Warehouse();
+        warehouse.addOrder(new Order("123"));
+        warehouse.addOrder(new Order("23242"));
+        warehouse.addOrder(new Order("312413"));
 
         try {
-            Order isOrderOnTheList = Warehouse.getOrder("2232323");
-        } catch (OrderDoesntExistException e) {
+            System.out.println(warehouse.getOrder("6"));
+        } catch(OrderDoesntExistException e){
             System.out.println("We don't have such order");
         }
     }
