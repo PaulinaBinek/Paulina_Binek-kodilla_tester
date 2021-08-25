@@ -8,7 +8,7 @@ public class WarehouseApp {
         warehouse.addOrder(new Order("312413"));
 
         try {
-            System.out.println(warehouse.getOrder("6"));
+            System.out.println(warehouse.getOrder("123"));
         } catch(OrderDoesntExistException e){
             System.out.println("We don't have such order");
         }
