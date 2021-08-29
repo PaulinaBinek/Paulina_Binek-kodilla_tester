@@ -16,4 +16,6 @@ class StringValidatorTestSuite {
         assertTrue(validator.isBlank(text));
     }
 
+
+
 }
