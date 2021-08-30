@@ -3,12 +3,11 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
 
+
 import java.util.Arrays;
 import java.util.Set;
 import java.util.stream.Collectors;
-
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class GamblingMachineTestSuite {
     private GamblingMachine machine = new GamblingMachine();
@@ -39,7 +38,13 @@ public class GamblingMachineTestSuite {
     public void shouldThrowWhenNumbersOutOfRange(String numbers) {
         Set<Integer> invalidNumbers = convertStringToIntegerSet(numbers);
         assertThrows(InvalidNumbersException.class, () -> machine.howManyWins(invalidNumbers));
+    }
 
+    @ParameterizedTest
+    @CsvFileSource(resources = "/NumberOfWins.csv", numLinesToSkip = 1)
+    public void shouldNotThrowWhenIfNumberOfWinsFromZeroToSix(String numbers) throws InvalidNumbersException {
+        Set<Integer> numberOfWins = convertStringToIntegerSet(numbers);
+        assertTrue(0 < machine.howManyWins(numberOfWins) && machine.howManyWins(numberOfWins) < 6);
     }
 
     private Set<Integer> convertStringToIntegerSet(String numbers) {
@@ -48,4 +53,5 @@ public class GamblingMachineTestSuite {
                 .collect(Collectors.toSet());
         return inputNumbers;
     }
+
 }
