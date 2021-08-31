@@ -2,8 +2,9 @@ package com.kodilla.execution_model.homework;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 public class Shop {
 
@@ -14,27 +15,39 @@ public class Shop {
         this.orders.add(order);
     }
 
-    public static List<LocalDate> getOrderByDate(
-            LocalDate startDate, LocalDate endDate) {
-
-        return startDate.datesUntil(endDate)
-                .collect(Collectors.toList());
+    public List<Order> orderDate(LocalDate startDate, LocalDate endDate) {
+        List<Order> orderDate = new ArrayList<>();
+        orders.stream().filter(x -> x.getDateOfOrder().isBefore(endDate) && x.getDateOfOrder().isAfter(startDate)).forEach(orderDate::add);
+        return orderDate;
     }
 
     public List<Order> filterOrders(int minPrice, int maxPrice){
         List<Order> results = new ArrayList();
-        orders.stream().filter(p -> p.getValueOfOrder() > minPrice && p.getValueOfOrder() < maxPrice).forEach(results::add);
+        orders.stream().filter(p -> p.getValueOfOrder() >= minPrice && p.getValueOfOrder() <= maxPrice).forEach(results::add);
         return results;
     }
 
-    public void getOrderSize() {
-        this.orders.size();
+    public int getOrderSize() {
+       return this.orders.size();
     }
 
-    public int sumOfOrders() {
-        List<Order> valueOfOrders = new ArrayList<>();
-        Integer sum = valueOfOrders.stream()
-                .collect(Collectors.summingInt(Order::getValueOfOrder));
+    public int  sumOfOrders() {
+        int sum = orders.stream()
+                .mapToInt(i -> i.getValueOfOrder())
+                .sum();
         return sum;
     }
+
+    public static void main(String[] args) {
+        Shop shop = new Shop();
+        shop.addOrder(new Order(23, LocalDate.of(2021,2,20), "John1"));
+        shop.addOrder(new Order(12, LocalDate.of(2021,3,24), "John2"));
+        shop.addOrder(new Order(43, LocalDate.of(2021,4,3), "John3"));
+        shop.addOrder(new Order(144, LocalDate.of(2021,5,10), "John4"));
+        System.out.println(shop.getOrderSize());
+        System.out.println(shop.filterOrders(12,50));
+        System.out.println(shop.sumOfOrders());
+        System.out.println(shop.orderDate(LocalDate.of(2021,2,1), LocalDate.of(2021,4,20)));
+    }
+
 }
