@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class Shop {
@@ -17,13 +18,13 @@ public class Shop {
 
     public List<Order> orderDate(LocalDate startDate, LocalDate endDate) {
         List<Order> orderDate = new ArrayList<>();
-        orders.stream().filter(x -> x.getDateOfOrder().isBefore(endDate) && x.getDateOfOrder().isAfter(startDate)).forEach(orderDate::add);
+        orders.stream().filter(x -> x.getDateOfOrder().isBefore(endDate) && x.getDateOfOrder().isAfter(startDate)).collect(Collectors.toCollection(() -> orderDate));
         return orderDate;
     }
 
     public List<Order> filterOrders(int minPrice, int maxPrice){
         List<Order> results = new ArrayList();
-        orders.stream().filter(p -> p.getValueOfOrder() >= minPrice && p.getValueOfOrder() <= maxPrice).forEach(results::add);
+        orders.stream().filter(p -> p.getValueOfOrder() >= minPrice && p.getValueOfOrder() <= maxPrice).collect(Collectors.toCollection(() -> results));
         return results;
     }
 
