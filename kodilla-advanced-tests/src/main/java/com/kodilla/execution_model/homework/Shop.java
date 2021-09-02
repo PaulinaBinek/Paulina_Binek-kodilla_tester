@@ -17,14 +17,12 @@ public class Shop {
     }
 
     public List<Order> orderDate(LocalDate startDate, LocalDate endDate) {
-        List<Order> orderDate = new ArrayList<>();
-        orders.stream().filter(x -> x.getDateOfOrder().isBefore(endDate) && x.getDateOfOrder().isAfter(startDate)).collect(Collectors.toCollection(() -> orderDate));
+        List<Order> orderDate = orders.stream().filter(x -> x.getDateOfOrder().isBefore(endDate) && x.getDateOfOrder().isAfter(startDate)).collect(Collectors.toList());
         return orderDate;
     }
 
     public List<Order> filterOrders(int minPrice, int maxPrice){
-        List<Order> results = new ArrayList();
-        orders.stream().filter(p -> p.getValueOfOrder() >= minPrice && p.getValueOfOrder() <= maxPrice).collect(Collectors.toCollection(() -> results));
+        List<Order> results = orders.stream().filter(p -> p.getValueOfOrder() >= minPrice && p.getValueOfOrder() <= maxPrice).collect(Collectors.toList());
         return results;
     }
 
