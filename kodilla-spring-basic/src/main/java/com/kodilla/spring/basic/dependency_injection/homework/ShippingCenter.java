@@ -4,10 +4,11 @@ public class ShippingCenter {
 
     private NotificationService notificationService;
 
-    private DeliveryService deliveryService = new DeliveryService();
+    private DeliveryService deliveryService;
 
-    public ShippingCenter(NotificationService notificationService) {
+    public ShippingCenter(NotificationService notificationService, DeliveryService deliveryService) {
         this.notificationService = notificationService;
+        this.deliveryService = deliveryService;
     }
 
     public void sendPackage(String address, double weight) {

@@ -41,10 +41,10 @@ public class GamblingMachineTestSuite {
     }
 
     @ParameterizedTest
-    @CsvFileSource(resources = "/NumberOfWins.csv", numLinesToSkip = 1)
+    @CsvFileSource(resources = "/ValidNumbers.csv", numLinesToSkip = 1)
     public void shouldNotThrowWhenIfNumberOfWinsFromZeroToSix(String numbers) throws InvalidNumbersException {
         Set<Integer> numberOfWins = convertStringToIntegerSet(numbers);
-        assertTrue(0 < machine.howManyWins(numberOfWins) && machine.howManyWins(numberOfWins) < 6);
+        assertTrue(0 <= machine.howManyWins(numberOfWins) && machine.howManyWins(numberOfWins) <= 6);
     }
 
     private Set<Integer> convertStringToIntegerSet(String numbers) {

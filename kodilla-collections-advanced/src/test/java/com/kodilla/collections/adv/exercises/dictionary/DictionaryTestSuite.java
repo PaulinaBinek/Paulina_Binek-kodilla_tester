@@ -1,9 +1,7 @@
 package com.kodilla.collections.adv.exercises.dictionary;
 
-import jdk.nashorn.api.tree.ArrayLiteralTree;
-import org.graalvm.compiler.hotspot.nodes.EndLockScopeNode;
+
 import org.junit.jupiter.api.Test;
-import sun.security.util.ArrayUtil;
 
 import java.util.ArrayList;
 import java.util.List;
