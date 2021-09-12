@@ -4,7 +4,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Calculator {
-
     private Display display;
 
     public Calculator(Display display) {
@@ -12,21 +11,23 @@ public class Calculator {
         this.display = display;
     }
 
-
     public double add(double a, double b) {
-        return this.display.display(a + b);
+
+        return display.display(a + b);
     }
 
     public double subtract(double a, double b) {
-        return this.display.display(a - b);
+
+        return display.display(a - b);
     }
 
     public double multiply(double a, double b) {
-        return this.display.display(a * b);
+        return display.display(a * b);
     }
 
     public double divide(double a, double b) {
-        return this.display.display(a / b);
+        return display.display(a / b);
     }
+
 
 }

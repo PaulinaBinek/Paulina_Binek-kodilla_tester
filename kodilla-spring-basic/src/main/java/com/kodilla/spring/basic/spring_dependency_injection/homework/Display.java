@@ -6,6 +6,8 @@ import org.springframework.stereotype.Component;
 public class Display {
 
     public double display(double value) {
+        System.out.println("The equation result is: " + value);
         return value;
     }
+
 }
