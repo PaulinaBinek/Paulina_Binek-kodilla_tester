@@ -36,8 +36,8 @@ class ShippingCenterTestSuite {
     public void shouldNotSendAPackage() {
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic");
         DeliveryService bean = context.getBean(DeliveryService.class);
-        boolean shouldSend = bean.deliverPackage("London", 35);
-        Assertions.assertEquals(false, shouldSend);
+        boolean shouldNotSend = bean.deliverPackage("London", 35);
+        Assertions.assertEquals(false, shouldNotSend);
     }
 
 
