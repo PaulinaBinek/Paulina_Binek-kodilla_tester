@@ -53,7 +53,7 @@ public class BookControllerMvcTest {
     @Test
     public void shouldAddBook() throws Exception {
         Gson gson = new Gson();
-        BookDto book = new BookDto("title 1", "author 1");
+        BookDto book = new BookDto("title 3", "author 3");
         BookService bookServiceMock = Mockito.mock(BookService.class);
         BookController bookController = new BookController(bookServiceMock);
         bookController.addBook(book);
