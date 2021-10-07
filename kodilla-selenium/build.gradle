@@ -8,8 +8,17 @@ repositories {
     mavenCentral()
 }
 
+
+
 dependencies {
+    implementation 'com.google.guava:guava:11.0.2'
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    compile(group: 'com.github.lewka', name: 'ocular', version: '1.0.5') {
+        exclude group: "net.sf", module: "jargs"
+    }
     testImplementation group: 'junit', name: 'junit', version: '5.3'
 }
 
+test {
+    useJUnitPlatform()
+}

@@ -14,8 +14,6 @@ public class GoogleResults extends AbstractPage {
     @FindBy(css = "div[class='g']")                  // [1]
     private List<WebElement> results;
 
-    @FindBy(css= "div[class='yuRUbf']")
-    private List<WebElement> randomPage;// [2]
 
     public GoogleResults(WebDriver driver) {         // [3]
         super(driver);                                // [4]

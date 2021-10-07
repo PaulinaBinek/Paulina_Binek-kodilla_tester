@@ -30,7 +30,7 @@ public class AllegroTestingApp {
         searchButton.click();
 
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div > a.msts_9u")));
+      //  wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div > a.msts_9u")));
 
         List<WebElement> element = driver.findElements(By.cssSelector("section > article.mx7m_1"));
         System.out.println(element.get(0).getText());
