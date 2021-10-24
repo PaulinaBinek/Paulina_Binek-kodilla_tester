@@ -35,14 +35,6 @@ public class TestGoogle {
         googleSearch.searchResults();
     }
 
-    @Test
-    public void shouldShowRandomSearchResult() {
-        GoogleSearch googleSearch = new GoogleSearch(driver);
-        googleSearch.searchResults();
-        GoogleResults googleResults = new GoogleResults(driver);
-        WebElement webElement = googleResults.randomResult();
-        RandomSearch randomResult = new RandomSearch(driver);
-        WebElement randomWebElement = randomResult.randomPage(webElement);
-        assertEquals(webElement, randomWebElement);
-} }
+
+}
 
